@@ -1,11 +1,97 @@
-st=>start: Start:>http://www.google.com[blank]
-e=>end:>http://www.google.com
-op1=>operation: My Ooooperation:$myFunction
-sub1=>subroutine: My Subroutine
-cond=>condition: Yes
-or No?:>http://www.google.com
-io=>inputoutput: catch something...
+st3=>start: start checar_ganador
+io5=>inputoutput: input: tablero
+op8=>operation: ganador = ' '
+cond11=>condition: if ((tablero[0][0] == 'x') and (tablero[0][1] == 'x') and (tablero[0][2] == 'x'))
+op15=>operation: ganador = 'x'
+cond172=>condition: if ((ganador == 'x') or (ganador == 'o'))
+sub176=>subroutine: print(f'el ganador es {ganador}')
+io181=>inputoutput: output:  True
+e179=>end: end function return
+sub186=>subroutine: print(f'aún no hay ganador')
+io191=>inputoutput: output:  False
+e189=>end: end function return
+cond20=>condition: if ((tablero[1][0] == 'x') and (tablero[1][1] == 'x') and (tablero[1][2] == 'x'))
+op24=>operation: ganador = 'x'
+cond29=>condition: if ((tablero[2][0] == 'x') and (tablero[2][1] == 'x') and (tablero[2][2] == 'x'))
+op33=>operation: ganador = 'x'
+cond38=>condition: if ((tablero[0][0] == 'x') and (tablero[1][1] == 'x') and (tablero[2][2] == 'x'))
+op42=>operation: ganador = 'x'
+cond47=>condition: if ((tablero[0][2] == 'x') and (tablero[1][1] == 'x') and (tablero[2][0] == 'x'))
+op51=>operation: ganador = 'x'
+cond56=>condition: if ((tablero[0][0] == 'x') and (tablero[1][0] == 'x') and (tablero[2][0] == 'x'))
+op60=>operation: ganador = 'x'
+cond65=>condition: if ((tablero[0][1] == 'x') and (tablero[1][1] == 'x') and (tablero[2][1] == 'x'))
+op69=>operation: ganador = 'x'
+cond74=>condition: if ((tablero[0][2] == 'x') and (tablero[1][2] == 'x') and (tablero[2][2] == 'x'))
+op78=>operation: ganador = 'x'
+cond83=>condition: if ((tablero[0][0] == 'o') and (tablero[0][1] == 'o') and (tablero[0][2] == 'o'))
+op87=>operation: ganador = 'o'
+cond92=>condition: if ((tablero[1][0] == 'o') and (tablero[1][1] == 'o') and (tablero[1][2] == 'o'))
+op96=>operation: ganador = 'o'
+cond101=>condition: if ((tablero[2][0] == 'o') and (tablero[2][1] == 'o') and (tablero[2][2] == 'o'))
+op105=>operation: ganador = 'o'
+cond110=>condition: if ((tablero[0][0] == 'o') and (tablero[1][1] == 'o') and (tablero[2][2] == 'o'))
+op114=>operation: ganador = 'o'
+cond119=>condition: if ((tablero[0][2] == 'o') and (tablero[1][1] == 'o') and (tablero[2][0] == 'o'))
+op123=>operation: ganador = 'o'
+cond128=>condition: if ((tablero[0][0] == 'o') and (tablero[1][0] == 'o') and (tablero[2][0] == 'o'))
+op132=>operation: ganador = 'o'
+cond137=>condition: if ((tablero[0][1] == 'o') and (tablero[1][1] == 'o') and (tablero[2][1] == 'o'))
+op141=>operation: ganador = 'o'
+cond146=>operation: ganador = 'o' if  ((tablero[0][2] == 'o') and (tablero[1][2] == 'o') and (tablero[2][2] == 'o'))
 
-st->op1->cond
-cond(yes)->io->e
-cond(no)->sub1(right)->op1
+st3->io5
+io5->op8
+op8->cond11
+cond11(yes)->op15
+op15->cond172
+cond172(yes)->sub176
+sub176->io181
+io181->e179
+cond172(no)->sub186
+sub186->io191
+io191->e189
+cond11(no)->cond20
+cond20(yes)->op24
+op24->cond172
+cond20(no)->cond29
+cond29(yes)->op33
+op33->cond172
+cond29(no)->cond38
+cond38(yes)->op42
+op42->cond172
+cond38(no)->cond47
+cond47(yes)->op51
+op51->cond172
+cond47(no)->cond56
+cond56(yes)->op60
+op60->cond172
+cond56(no)->cond65
+cond65(yes)->op69
+op69->cond172
+cond65(no)->cond74
+cond74(yes)->op78
+op78->cond172
+cond74(no)->cond83
+cond83(yes)->op87
+op87->cond172
+cond83(no)->cond92
+cond92(yes)->op96
+op96->cond172
+cond92(no)->cond101
+cond101(yes)->op105
+op105->cond172
+cond101(no)->cond110
+cond110(yes)->op114
+op114->cond172
+cond110(no)->cond119
+cond119(yes)->op123
+op123->cond172
+cond119(no)->cond128
+cond128(yes)->op132
+op132->cond172
+cond128(no)->cond137
+cond137(yes)->op141
+op141->cond172
+cond137(no)->cond146
+cond146->cond172
